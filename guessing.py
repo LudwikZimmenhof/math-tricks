@@ -1,13 +1,21 @@
 from datetime import datetime
 
 
-num=0
 year = datetime.now().year
 
 
-while num<2 or num>10:
-	num=int(input("Give number between 2 and 10: "))
+def number():
+	global num
+	num=0
+	while num<2 or num>10:
+		try:
+			num=int(input("Give number between 2 and 10: "))
+			break
+		except ValueError:
+			print("Thats not even a number")
+			number()
 
+number()
 
 num2=num*2
 
